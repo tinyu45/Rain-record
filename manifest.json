@@ -1,9 +1,9 @@
 {
-    "name" : "Rain-record",
+    "name" : "风雨录",
     "appid" : "__UNI__906027B",
-    "description" : "",
-    "versionName" : "ColorUi for UniApp 2.1.4",
-    "versionCode" : 214,
+    "description" : "个人demo",
+    "versionName" : "Rain record 100",
+    "versionCode" : 100,
     "transformPx" : false,
     "app-plus" : {
         /* 5+App特有相关 */
@@ -55,7 +55,7 @@
         }
     },
     "h5" : {
-        "title" : "ColorUi for UniApp",
+        "title" : "风雨录",
         "domain" : "demo.color-ui.com"
     }
 }

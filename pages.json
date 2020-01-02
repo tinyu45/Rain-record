@@ -105,7 +105,11 @@
 			"path": "pages/plugin/verticalnav",
 			"style": {}
 		}
-	],
+	    ,{
+            "path" : "pages/calendar/calendar",
+            "style" : {}
+        }
+    ],
 	"globalStyle": {
 		"mp-alipay": {
 			/* 支付宝小程序特有相关 */
@@ -113,7 +117,7 @@
 			"allowsBounceVertical": "NO"
 		},
 		"navigationBarBackgroundColor": "#0081ff",
-		"navigationBarTitleText": "ColorUi for UniApp",
+		"navigationBarTitleText": "风雨录",
 		"navigationStyle": "custom",
 		"navigationBarTextStyle": "white"
 	},
