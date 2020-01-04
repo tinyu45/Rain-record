@@ -10,7 +10,7 @@
 			</swiper>
 			
 			<view class="cu-list grid col-3 no-border">
-				<view class="cu-item" v-for="(item,index) in cuIconList" :key="index">
+				<view class="cu-item" v-for="(item,index) in cuIconList" :key="index"  @click="jumpTo(item.link)">
 					<view :class="['cuIcon-' + item.cuIcon,'text-' + item.color]">
 						<view class="cu-tag badge" v-if="item.badge!=0">
 							<block v-if="item.badge!=1">{{item.badge>99?'99+':item.badge}}</block>
@@ -61,7 +61,7 @@
 				swiperList: [{
 					id: 0,
 					type: 'image',
-					url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
+					url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
 				}, {
 					id: 1,
 					type: 'image',
@@ -92,32 +92,38 @@
 					cuIcon: 'cardboardfill',
 					color: 'red',
 					badge: 120,
-					name: '日历'
+					name: '日历',
+					link: '/pages/calendar/calendar'
 				}, {
 					cuIcon: 'recordfill',
 					color: 'orange',
 					badge: 1,
-					name: '天气'
+					name: '天气',
+					link: '/'
 				}, {
 					cuIcon: 'picfill',
 					color: 'yellow',
 					badge: 0,
-					name: '动态'
+					name: '动态',
+					link: '/'
 				}, {
 					cuIcon: 'noticefill',
 					color: 'olive',
 					badge: 22,
-					name: '通知'
+					name: '通知',
+					link: '/'
 				}, {
 					cuIcon: 'upstagefill',
 					color: 'cyan',
 					badge: 0,
-					name: '排行榜'
+					name: '排行榜',
+					link: '/'
 				}, {
 					cuIcon: 'clothesfill',
 					color: 'blue',
 					badge: 0,
-					name: '皮肤'
+					name: '皮肤',
+					link: '/'
 				}],
 			}
 		},
@@ -133,6 +139,14 @@
 						url: '/pages/demo/index'
 					})
 				}
+			},
+			
+			/**
+			 * 跳转模块
+			 */
+			jumpTo(url)
+			{
+				uni.navigateTo({url});
 			}
 		}
 	}
