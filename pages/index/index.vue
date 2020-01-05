@@ -99,7 +99,7 @@
 					color: 'orange',
 					badge: 1,
 					name: '天气',
-					link: '/'
+					link: '/pages/weather/weather'
 				}, {
 					cuIcon: 'picfill',
 					color: 'yellow',

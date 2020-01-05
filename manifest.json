@@ -56,6 +56,19 @@
     },
     "h5" : {
         "title" : "风雨录",
-        "domain" : "demo.color-ui.com"
+        "domain" : "demo.color-ui.com",
+		//配置跨域名
+		"devServer":{
+			"port": 8000,
+			"disableHostCheck": true,
+			"proxy": {
+				"/weather":{
+					"target":"http://www.weather.com.cn",
+					"changeOrigin":true,
+					"secure":false,
+					"pathRewrite":{"^/weather":""}
+				}
+			}
+		}
     }
 }
