@@ -109,6 +109,10 @@
             "path" : "pages/calendar/calendar",
             "style" : {}
         }
+        ,{
+            "path" : "pages/weather/weather",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {
