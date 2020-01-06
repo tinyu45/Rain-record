@@ -63,7 +63,8 @@
 			"disableHostCheck": true,
 			"proxy": {
 				"/weather":{
-					"target":"http://www.weather.com.cn",
+					//"target":"http://www.weather.com.cn",
+					"target": "http://api.help.bj.cn",
 					"changeOrigin":true,
 					"secure":false,
 					"pathRewrite":{"^/weather":""}

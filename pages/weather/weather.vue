@@ -10,6 +10,10 @@
 			<text>请选择</text>
 		</view>
 		
+		<view>
+			{{JSON.stringify(W_36hData)}}
+		</view>
+		
 		<w-picker 
 		    mode="region"
 		    :defaultVal="['浙江省','杭州市','滨江区']"
@@ -32,7 +36,7 @@
 		
 		data() {
 			return {
-				
+				W_36hData:null,
 			}
 		},
 		
@@ -46,12 +50,23 @@
 			//weatherApi.getWeather01('/weather/data/sk/101190408.html', this.callBack);
 			
 			//发发3 异步方法 		 				   
-			weatherApi.request(['陕西','西安']).then(res =>{
-				console.log(res);
-			});
+			// weatherApi.request(['陕西','西安']).then(res =>{
+			// 	console.log(res);
+			// });
+			
+			this.get_36h_Weather('西安');
 		},
 		
 		methods: {
+			/**
+			 * @param {Object} cityName 获取36H天气
+			 */
+			get_36h_Weather(cityName){
+				weatherApi.request(cityName).then(res =>{
+					this.W_36hData=res.data;
+				});
+			},
+			
 			/**
 			 * @param {Object} res请求回调
 			 */
@@ -65,7 +80,7 @@
 			 */
 			onConfirmCity(res)
 			{
-				console.log(res);
+				this.get_36h_Weather(res.checkArr[1]);
 			}
 		}
 	}
