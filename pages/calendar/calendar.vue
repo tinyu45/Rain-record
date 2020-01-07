@@ -6,20 +6,20 @@
 		</cu-custom>
 		
 		<view class="padding bg-white">
-			<view class="flex bg-orange radius margin-bottom-xs">
-				<view class="flex-sub padding-sm margin-xs text-center">周一</view>
-				<view class="flex-sub padding-sm margin-xs text-center">周二</view>
-				<view class="flex-sub padding-sm margin-xs text-center">周三</view>
-				<view class="flex-sub padding-sm margin-xs text-center">周四</view>
-				<view class="flex-sub padding-sm margin-xs text-center">周五</view>
-				<view class="flex-sub padding-sm margin-xs text-center">周六</view>
-				<view class="flex-sub padding-sm margin-xs text-center">周日</view>
+			<view class="flex bg-grey light radius  margin-bottom-xs padding-bottom-xs padding-top-xs">
+				<view class="flex-sub  margin-xs text-center text-gray">周一</view>
+				<view class="flex-sub  margin-xs text-center text-gray">周二</view>
+				<view class="flex-sub  margin-xs text-center text-gray">周三</view>
+				<view class="flex-sub  margin-xs text-center text-gray">周四</view>
+				<view class="flex-sub  margin-xs text-center text-gray">周五</view>
+				<view class="flex-sub  margin-xs text-center text-gray">周六</view>
+				<view class="flex-sub  margin-xs text-center text-gray">周日</view>
 			</view>
-			<view class="bg-brown">
+			<view class="bg-white">
 				<view class="flex" v-for="row in 42/7" :key="row" v-if="days.length!=0">
 					<view 
 						v-for="item in 7" :key="item"
-						:class="[days[item+(row-1)*7-1].disabled ? 'text-gray' : 'text-white']"
+						:class="[days[item+(row-1)*7-1].disabled ? 'text-white bg-gray' : 'text-black']"
 						class="text-center flex-sub  padding-sm solid">
 						{{days[item+(row-1)*7-1].day.getDate()}}
 					</view>
