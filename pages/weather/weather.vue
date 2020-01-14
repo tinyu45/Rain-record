@@ -27,7 +27,7 @@
 </template>
 
 <script>
-	import weatherApi from '../../static/common/untis.js'
+	import {weatherApi} from '../../static/common/untis.js'
 	import wPicker from "@/components/w-picker/w-picker.vue";
 	export default {
 		components:{
@@ -53,7 +53,7 @@
 			// weatherApi.request(['陕西','西安']).then(res =>{
 			// 	console.log(res);
 			// });
-			
+			console.log(weatherApi);
 			this.get_36h_Weather('西安');
 		},
 		

@@ -20,8 +20,9 @@
 					<view 
 						v-for="item in 7" :key="item"
 						:class="[days[item+(row-1)*7-1].disabled ? 'text-white bg-gray' : 'text-black']"
-						class="text-center flex-sub  padding-sm solid">
-						{{days[item+(row-1)*7-1].day.getDate()}}
+						class="text-center flex-sub  padding-top-sm padding-bottom-sm solid">
+						<view class="text-bold">{{days[item+(row-1)*7-1].day.getDate()}}</view>
+						<view class="text-xs">{{days[item+(row-1)*7-1].lunner | lunnerFormat}}</view>
 					</view>
 				</view>
 			</view>
@@ -30,6 +31,7 @@
 </template>
 
 <script>
+	import {GetLunarDay} from '../../static/common/untis.js'
 	export default {
 		data() {
 			return {
@@ -52,6 +54,17 @@
 		{	
 			this.initCalendar();
 		},
+		
+		filters:{
+			lunnerFormat(info)
+			{
+				if(info.isTerm) return info.Term;
+				if(info.festival) return info.festival;
+				if(info.lunarFestival) return info.lunarFestival;
+				return info.IDayCn;
+			}
+		},
+		
 		
 		methods: {
 			//初始化日历
@@ -97,7 +110,7 @@
 					const dayobject = {
 						day:d,
 						disabled: i!=0,
-						lunner:''
+						lunner:GetLunarDay(d)
 					}; 
 					this.days.push(dayobject);//将日期放入data 中的days数组 供页面渲染使用
 				}
@@ -115,10 +128,12 @@
 					const dayobject = {
 						day:d,
 						disabled: d.getMonth()==this.currentMonth,
-						lunner:''
+						lunner:GetLunarDay(d)
 					}; 
 					this.days.push(dayobject);
 				}
+				
+				console.log(this.days);
 			},
 			
 			
