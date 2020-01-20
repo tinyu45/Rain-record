@@ -19,7 +19,7 @@
 				<view class="flex" v-for="row in 42/7" :key="row" v-if="days.length!=0">
 					<view 
 						v-for="item in 7" :key="item"
-						:class="[days[item+(row-1)*7-1].disabled ? 'text-white bg-gray' : 'text-black']"
+						:class="[days[item+(row-1)*7-1].disabled ? 'text-white bg-gray' : 'text-black',  days[item+(row-1)*7-1].day==new Date() ? 'bg-blue' : 'bg-white']"
 						class="text-center flex-sub  padding-top-sm padding-bottom-sm solid">
 						<view class="text-bold">{{days[item+(row-1)*7-1].day.getDate()}}</view>
 						<view class="text-xs">{{days[item+(row-1)*7-1].lunner | lunnerFormat}}</view>
@@ -86,9 +86,9 @@
 				this.currentMonth = date.getMonth() + 1;
 				 
 				
-				this.nowDay = new Date().getDate();
-				this.nowFullYear = date.getFullYear();
-				this.nowMonth = date.getMonth() + 1;
+				//this.nowDay = new Date().getDate();
+				//this.nowFullYear = date.getFullYear();
+				//this.nowMonth = date.getMonth() + 1;
 				 
 				this.currentWeek = date.getDay(); //获取当前星期X(0-6,0代表星期天)
 				if (this.currentWeek == 0) 
@@ -118,7 +118,7 @@
 			
 				//this.nowDay-1（今天几号索引）this.currentWeek-1（当月第一天周几索引）
 				//得到今天的索引值 初始化active样式
-				this.number=this.nowDay+this.currentWeek-2;
+				//this.number=this.nowDay+this.currentWeek-2;
 			 
 			
 				//列表显示的天数6*7减去前星期X
